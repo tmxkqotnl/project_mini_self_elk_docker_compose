@@ -1,0 +1,9 @@
+cmd에서 실행하세요.
+
+docker run --privileged --name centos7 <image> /sbin/init
+
+passwd
+
+rlaehdgnsc
+
+docker run --privileged --name kafka kafka_local /sbin/init

@@ -1,0 +1,71 @@
+version: '3.8'
+services:
+  elasticsearch:
+    user: root
+    image: elastic_local
+    container_name: elasticsearch
+    privileged: true
+    ports:
+      - 9200
+    entrypoint: "/sbin/init"
+    networks:
+      - elk
+
+  filebeat:
+    user: root
+    image: filebeat_local
+    container_name: filebeat
+    privileged: true
+    ports:
+      - 5601
+    entrypoint: "/sbin/init"
+    networks:
+      - elk
+
+  metricbeat:
+    user: root
+    image: metricbeat_local
+    container_name: metricbeat
+    privileged: true
+    ports:
+      - 5602
+    entrypoint: "/sbin/init"
+    networks:
+      - elk
+
+  kibana:
+    user: root
+    image: kibana_local
+    container_name: kibana
+    privileged: true
+    ports:
+      - 8000
+    entrypoint: "/sbin/init"
+    networks:
+      - elk
+
+  logstash:
+    user: root
+    image: logstash_local
+    container_name: logstash
+    privileged: true
+    ports:
+      - 8000
+    entrypoint: "/sbin/init"
+    networks:
+      - elk
+
+  kafka:
+    user: root
+    image: kafka_local
+    container_name: kafka
+    privileged: true
+    ports:
+      - 8001
+    entrypoint: "/sbin/init"
+    networks:
+      - elk
+
+networks:
+  elk:
+    driver: bridge

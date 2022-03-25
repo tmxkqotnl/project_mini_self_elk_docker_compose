@@ -1,0 +1,11 @@
+https://classicismist.blogspot.com/2020/01/centos7-elk-stack-filebeat-logstash.html
+
+rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch # 설치를 위한 키 imoporting
+
+/etc/sysconfig/selinux 
+    SELINUX=disabled
+
+/etc/elasticsearch/elasticsearch.yml
+/etc/kibana/kibana.yml
+/etc/logstash/logstash.yml
+/etc/logstash/conf.d
