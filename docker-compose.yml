@@ -7,6 +7,7 @@ services:
     privileged: true
     ports:
       - 9200
+      - 9300
     entrypoint: "/sbin/init"
     networks:
       - elk
@@ -16,8 +17,6 @@ services:
     image: filebeat_local
     container_name: filebeat
     privileged: true
-    ports:
-      - 5601
     entrypoint: "/sbin/init"
     networks:
       - elk
@@ -27,8 +26,6 @@ services:
     image: metricbeat_local
     container_name: metricbeat
     privileged: true
-    ports:
-      - 5602
     entrypoint: "/sbin/init"
     networks:
       - elk
@@ -39,7 +36,7 @@ services:
     container_name: kibana
     privileged: true
     ports:
-      - 8000
+      - 5601
     entrypoint: "/sbin/init"
     networks:
       - elk
@@ -50,7 +47,7 @@ services:
     container_name: logstash
     privileged: true
     ports:
-      - 8000
+      - 5044
     entrypoint: "/sbin/init"
     networks:
       - elk
@@ -61,7 +58,18 @@ services:
     container_name: kafka
     privileged: true
     ports:
-      - 8001
+      - 9092
+    entrypoint: "/sbin/init"
+    networks:
+      - elk
+
+  spark:
+    user: root
+    image: spark_local
+    container_name: spark
+    privileged: true
+    ports:
+      - 8002
     entrypoint: "/sbin/init"
     networks:
       - elk
