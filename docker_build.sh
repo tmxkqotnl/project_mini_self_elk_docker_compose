@@ -12,6 +12,8 @@ elif [ $1 == 'metricbeat' ]; then
     docker build -t metricbeat_local ./dockerfiles/metricbeat/
 elif [ $1 == 'kafka' ]; then
     docker build -t kafka_local ./dockerfiles/kafka/
+elif [ $1 == 'spark' ]; then
+    docker build -t spark_local ./dockerfiles/spark/
 elif [ $1 == 'all' ]; then
     docker build -t base_elk ./dockerfiles/base
     docker build -t elastic_local ./dockerfiles/elasticsearch
