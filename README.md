@@ -1,0 +1,1 @@
+# project_mini_self_elk_docker_compose
