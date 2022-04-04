@@ -1,12 +1,8 @@
-FROM base_elk
-
+FROM tmxkqotnl/elk_base
 LABEL version="1.0.0"
-
 USER root
-COPY ./setting/* /home
 
-RUN mv /home/selinux.txt /home/selinux && \
-    mv /home/selinux /etc/sysconfig && \
-    mv /home/elasticsearch.repo /etc/yum.repos.d/ && \
-    rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch && \
-    yum install --enablerepo=elasticsearch elasticsearch -y
+RUN rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch; \
+    yum install -y --enablerepo=elasticsearch elasticsearch
+COPY /file/elasticsearch.yml /etc/elasticsearch/
+RUN systemctl enable elasticsearch.service
