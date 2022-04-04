@@ -1,0 +1,12 @@
+# This file is where you define your pipelines. You can define multiple.
+# For more information on multiple pipelines, see the documentation:
+#   https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html
+
+- pipeline.id: filebeat
+  path.config: "/etc/logstash/conf.d/filebeat.conf"
+- pipeline.id: metricbeat
+  path.config: "/etc/logstash/conf.d/metricbeat.conf"
+- pipeline.id: csv
+  path.config: "/etc/logstash/conf.d/csv.conf"
+- pipeline.id: openapi
+  path.config: "/etc/logstash/conf.d/openapi.conf"

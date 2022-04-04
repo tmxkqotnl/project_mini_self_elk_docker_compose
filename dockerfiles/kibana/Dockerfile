@@ -1,10 +1,8 @@
-FROM base_elk
+FROM tmxkqotnl/elk_base
 LABEL version="1.0.0"
 USER root
-COPY ./setting/* /home
 
-RUN mv /home/selinux.txt /home/selinux && \
-    mv /home/selinux /etc/sysconfig && \
-    mv /home/kibana.repo /etc/yum.repos.d && \
-    rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch && \
-    yum -y install kibana
+RUN rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch; \
+    yum install -y --enablerepo=elasticsearch kibana
+COPY /file/kibana.yml /etc/kibana/
+RUN systemctl enable kibana

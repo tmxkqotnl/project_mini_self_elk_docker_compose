@@ -1,0 +1,15 @@
+https://classicismist.blogspot.com/2020/01/centos7-elk-stack-filebeat-logstash.html
+https://github.com/bitnami/bitnami-docker-kafka/issues/37
+https://github.com/anti1346/multinode-kafka-cluster
+
+
+/etc/sysconfig/selinux 
+    SELINUX=disabled
+
+https://hub.docker.com/r/bitnami/kafka
+https://www.elastic.co/guide/en/beats/filebeat/current/running-on-docker.html
+https://hub.docker.com/_/logstash
+https://hub.docker.com/r/bitnami/kibana
+https://hub.docker.com/r/bitnami/zookeeper
+
+줄 구분 LF로.

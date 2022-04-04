@@ -3,3 +3,15 @@ netstat -tulpn | grep LISTEN
 ss -tulpn | grep LISTEN
 lsof -i:22 ## see a specific port such as 22 ##
 nmap -sTU -O IP-address-Here
+
+
+# usin cmd
+docker run --privileged -d tmxkqotnl/centos_base /sbin/init
+
+
+passwd - root 계정 비밀번호 변경
+
+yum list installed | grep elastic
+
+
+﻿logstash -f [config 파일 경로]
